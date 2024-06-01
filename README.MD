@@ -15,6 +15,6 @@ git clone https://github.com/manifet/test-aitiguru.git
 cd test-aitiguru
 ```
 I recommend using VS code plugin - Live Server </br>
-To log in to the application use password `admin` and login `admin`
+To log in to the application use password `padmin` and login `admin`
 ## You can ask me a question [here](https://github.com/manifet/test-appfox/issues)
 

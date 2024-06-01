@@ -2,27 +2,27 @@ Ext.define("test-aitiguru.controller.MainController", {
   extend: "Ext.app.Controller",
   init: function () {
     this.control({
-      "button[action=showProducts]": {
-        click: this.showProducts,
+      "button[action=logIn]": {
+        click: this.logIn,
       },
-      "button[action=logout]": {
-        click: this.logout,
+      "button[action=logOut]": {
+        click: this.logOut,
       },
     });
   },
-  showProducts: function (button) {
-    const tabPanel = button.up("window").down("tabpanel");
-    let productTab = button.up("window").down("productgrid");
-    if (!productTab) {
-      let productTab = tabPanel.add({
-        xtype: "productgrid",
-        title: "Products",
-        closable: true,
-      });
-      tabPanel.setActiveTab(productTab);
+
+  logIn: function (button) {
+    const form = button.up("form").getForm();
+    const values = form.getValues();
+    if (values.username === "admin" && values.password === "padmin") {
+      button.up("window").close();
+      Ext.create("test-aitiguru.view.Main").show();
+    } else {
+      Ext.Msg.alert("Error", "Invalid login or password");
     }
   },
-  logout: function (button) {
+
+  logOut: function (button) {
     button.up("window").close();
     Ext.create("test-aitiguru.view.Login").show();
   },
