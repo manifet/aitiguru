@@ -28,15 +28,14 @@ Ext.define("test-aitiguru.controller.ProductGridController", {
 
   applyProductsFilter: function (field, e) {
     if (e.getKey() === e.ENTER) {
-      const grid = field.up("productgrid").down("grid");
-      const store = grid.getStore();
-      const idFilterField = field.up("productgrid").down("#idFilter");
-      const descriptionFilterField = field
-        .up("productgrid")
-        .down("#descriptionFilter");
-
-      const idValue = idFilterField.getValue();
-      const descriptionValue = descriptionFilterField.getValue().toLowerCase();
+      const grid = field.up("productgrid").down("grid"),
+        store = grid.getStore(),
+        idFilterField = field.up("productgrid").down("#idFilter"),
+        descriptionFilterField = field
+          .up("productgrid")
+          .down("#descriptionFilter"),
+        idValue = idFilterField.getValue(),
+        descriptionValue = descriptionFilterField.getValue().toLowerCase();
 
       store.clearFilter();
       if (idValue) {

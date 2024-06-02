@@ -1,5 +1,6 @@
 Ext.define("test-aitiguru.controller.MainController", {
   extend: "Ext.app.Controller",
+
   init: function () {
     this.control({
       "button[action=logIn]": {
@@ -12,11 +13,11 @@ Ext.define("test-aitiguru.controller.MainController", {
   },
 
   logIn: function (button) {
-    const form = button.up("form").getForm();
-    const values = form.getValues();
-    if (values.username === "admin" && values.password === "padmin") {
-      button.up("window").close();
-      Ext.create("test-aitiguru.view.Main").show();
+    const form = button.up("form").getForm(),
+      values = form.getValues();
+
+    if (this.isValidLogin(values)) {
+      this.openMainView(button);
     } else {
       Ext.Msg.alert("Error", "Invalid login or password");
     }
@@ -25,5 +26,14 @@ Ext.define("test-aitiguru.controller.MainController", {
   logOut: function (button) {
     button.up("window").close();
     Ext.create("test-aitiguru.view.Login").show();
+  },
+
+  isValidLogin: function (values) {
+    return values.username === "admin" && values.password === "padmin";
+  },
+
+  openMainView: function (button) {
+    button.up("window").close();
+    Ext.create("test-aitiguru.view.Main").show();
   },
 });

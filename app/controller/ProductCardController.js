@@ -17,14 +17,14 @@ Ext.define("test-aitiguru.controller.ProductCardController", {
   openProductCard: function (view, cell, cellIndex, record, row, rowIndex, e) {
     if (cellIndex === 1) {
       // Assuming "name" is the second column
-      var formWindow = Ext.create("test-aitiguru.view.ProductCard");
+      const formWindow = Ext.create("test-aitiguru.view.ProductCard");
       formWindow.down("form").loadRecord(record);
       formWindow.show();
     }
   },
 
   saveProduct: function (button) {
-    var win = button.up("window"),
+    const win = button.up("window"),
       form = win.down("form"),
       record = form.getRecord(),
       values = form.getValues();

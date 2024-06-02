@@ -16,25 +16,25 @@ Ext.define("test-aitiguru.view.ProductCard", {
         {
           xtype: "displayfield",
           name: "name",
-          fieldLabel: "Name",
+          fieldLabel: "Name"
         },
         {
           xtype: "displayfield",
           name: "description",
-          fieldLabel: "Description",
+          fieldLabel: "Description"
         },
         {
           xtype: "numberfield",
           name: "price",
           fieldLabel: "Price",
-          minValue: 0,
           step: 0.01,
+          minValue: 0
         },
         {
           xtype: "numberfield",
           name: "quantity",
           fieldLabel: "Quantity",
-          minValue: 0,
+          minValue: 0
         },
       ],
       buttons: [
@@ -42,11 +42,11 @@ Ext.define("test-aitiguru.view.ProductCard", {
           text: "Save",
           formBind: true,
           disabled: true,
-          action: "saveProduct",
+          action: "saveProduct"
         },
         {
           text: "Cancel",
-          action: "cancelEdit",
+          action: "cancelEdit"
         },
       ],
     },

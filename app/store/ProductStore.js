@@ -1,7 +1,7 @@
 Ext.define("test-aitiguru.store.ProductStore", {
   extend: "Ext.data.Store",
   alias: "store.ProductStore",
-  model: "test-aitiguru.model.Product",
+  model: "test-aitiguru.model.ProductModel",
   data: [
     {
       id: 1,
